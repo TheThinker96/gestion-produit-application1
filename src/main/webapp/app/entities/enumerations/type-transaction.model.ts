@@ -1,0 +1,5 @@
+export enum TypeTransaction {
+  PRODUCTSALE = 'PRODUCTSALE',
+
+  SALECANCELLED = 'SALECANCELLED',
+}

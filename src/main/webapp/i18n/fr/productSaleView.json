@@ -1,0 +1,32 @@
+{
+  "gestionProduitApplication1App": {
+    "productSaleView": {
+      "home": {
+        "title": "ProductSaleViews",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Product Sale View",
+        "createOrEditLabel": "Créer ou éditer un Product Sale View",
+        "notFound": "Aucun Product Sale View trouvé"
+      },
+      "created": "Un nouveau Product Sale View a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Product Sale View avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Product Sale View avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Product Sale View {{ id }} ?"
+      },
+      "detail": {
+        "title": "Product Sale View"
+      },
+      "id": "Id",
+      "productName": "Product Name",
+      "stockName": "Stock Name",
+      "quantite": "Quantite",
+      "productPrice": "Product Price",
+      "total": "Total",
+      "createdBy": "Created By",
+      "createdDate": "Created Date",
+      "lastModifiedBy": "Last Modified By",
+      "lastModifiedDate": "Last Modified Date"
+    }
+  }
+}

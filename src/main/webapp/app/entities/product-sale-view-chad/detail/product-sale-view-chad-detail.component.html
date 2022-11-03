@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="productSaleView">
+      <h2 data-cy="productSaleViewDetailsHeading">
+        <span jhiTranslate="gestionProduitApplication1App.productSaleView.detail.title">Product Sale View</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.id">Id</span></dt>
+        <dd>
+          <span>{{ productSaleView.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.productName">Product Name</span></dt>
+        <dd>
+          <span>{{ productSaleView.productName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.stockName">Stock Name</span></dt>
+        <dd>
+          <span>{{ productSaleView.stockName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.quantite">Quantite</span></dt>
+        <dd>
+          <span>{{ productSaleView.quantite }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.productPrice">Product Price</span></dt>
+        <dd>
+          <span>{{ productSaleView.productPrice }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.total">Total</span></dt>
+        <dd>
+          <span>{{ productSaleView.total }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ productSaleView.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ productSaleView.createdDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ productSaleView.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSaleView.lastModifiedDate">Last Modified Date</span></dt>
+        <dd>
+          <span>{{ productSaleView.lastModifiedDate | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/product-sale-view-chad', productSaleView.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

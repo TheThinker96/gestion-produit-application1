@@ -7,6 +7,15 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "productChad": "Product",
+        "stockProductChad": "Stock Product",
+        "productSaleChad": "Product Sale",
+        "productTransactionChad": "Product Transaction",
+        "stockProductViewChad": "Stock Product View",
+        "productSaleViewChad": "Product Sale View",
+        "productTransactionViewChad": "Product Transaction View",
+        "userSaleAccountChad": "User Sale Account",
+        "userCashBackChad": "User Cash Back",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -1,0 +1,27 @@
+{
+  "gestionProduitApplication1App": {
+    "productTransaction": {
+      "home": {
+        "title": "Product Transactions",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Product Transaction",
+        "createOrEditLabel": "Crear o editar Product Transaction",
+        "notFound": "Ningún Product Transactions encontrado"
+      },
+      "created": "Un nuevo Product Transaction ha sido creado con el identificador {{ param }}",
+      "updated": "Un Product Transaction ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Product Transaction ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Product Transaction {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Transaction"
+      },
+      "id": "Id",
+      "transactionType": "Transaction Type",
+      "description": "Description",
+      "stockProduct": "Stock Product",
+      "product": "Product"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="stockProduct">
+      <h2 data-cy="stockProductDetailsHeading">
+        <span jhiTranslate="gestionProduitApplication1App.stockProduct.detail.title">Stock Product</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProduct.id">Id</span></dt>
+        <dd>
+          <span>{{ stockProduct.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProduct.quantite">Quantite</span></dt>
+        <dd>
+          <span>{{ stockProduct.quantite }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProduct.name">Name</span></dt>
+        <dd>
+          <span>{{ stockProduct.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProduct.deliveryDate">Delivery Date</span></dt>
+        <dd>
+          <span>{{ stockProduct.deliveryDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProduct.expirationDate">Expiration Date</span></dt>
+        <dd>
+          <span>{{ stockProduct.expirationDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProduct.prixStock">Prix Stock</span></dt>
+        <dd>
+          <span>{{ stockProduct.prixStock }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProduct.product">Product</span></dt>
+        <dd>
+          <div *ngIf="stockProduct.product">
+            <a [routerLink]="['/product-chad', stockProduct.product.id, 'view']">{{ stockProduct.product.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/stock-product-chad', stockProduct.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

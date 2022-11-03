@@ -1,0 +1,44 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20221103144309",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "product_transaction",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "transactionType",
+      "fieldType": "TypeTransaction",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "PRODUCTSALE,SALECANCELLED"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ProductTransaction",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "stockProduct",
+      "otherEntityRelationshipName": "productTransaction",
+      "relationshipName": "stockProduct",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "productTransaction",
+      "relationshipName": "product",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

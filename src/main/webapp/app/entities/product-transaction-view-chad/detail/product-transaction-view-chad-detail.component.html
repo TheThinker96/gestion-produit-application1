@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="productTransactionView">
+      <h2 data-cy="productTransactionViewDetailsHeading">
+        <span jhiTranslate="gestionProduitApplication1App.productTransactionView.detail.title">Product Transaction View</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.id">Id</span></dt>
+        <dd>
+          <span>{{ productTransactionView.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.productName">Product Name</span></dt>
+        <dd>
+          <span>{{ productTransactionView.productName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.stockName">Stock Name</span></dt>
+        <dd>
+          <span>{{ productTransactionView.stockName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.quantite">Quantite</span></dt>
+        <dd>
+          <span>{{ productTransactionView.quantite }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.transactionType">Transaction Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'gestionProduitApplication1App.TypeTransaction.' + productTransactionView.transactionType }}">{{
+            productTransactionView.transactionType
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.description">Description</span></dt>
+        <dd>
+          <span>{{ productTransactionView.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ productTransactionView.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ productTransactionView.createdDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ productTransactionView.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransactionView.lastModifiedDate">Last Modified Date</span></dt>
+        <dd>
+          <span>{{ productTransactionView.lastModifiedDate | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/product-transaction-view-chad', productTransactionView.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

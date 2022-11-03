@@ -1,0 +1,28 @@
+<form *ngIf="productSale" name="deleteForm" (ngSubmit)="confirmDelete(productSale.id!)">
+  <div class="modal-header">
+    <h4 class="modal-title" data-cy="productSaleDeleteDialogHeading" jhiTranslate="entity.delete.title">Confirmation de suppression</h4>
+
+    <button type="button" class="btn-close" data-dismiss="modal" aria-hidden="true" (click)="cancel()">&times;</button>
+  </div>
+
+  <div class="modal-body">
+    <jhi-alert-error></jhi-alert-error>
+    <p
+      id="jhi-delete-productSale-heading"
+      jhiTranslate="gestionProduitApplication1App.productSale.delete.question"
+      [translateValues]="{ id: productSale.id }"
+    >
+      Êtes-vous certain de vouloir supprimer le Product Sale {{ productSale.id }} ?
+    </p>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">
+      <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annuler</span>
+    </button>
+
+    <button id="jhi-confirm-delete-productSale" data-cy="entityConfirmDeleteButton" type="submit" class="btn btn-danger">
+      <fa-icon icon="times"></fa-icon>&nbsp;<span jhiTranslate="entity.action.delete">Supprimer</span>
+    </button>
+  </div>
+</form>

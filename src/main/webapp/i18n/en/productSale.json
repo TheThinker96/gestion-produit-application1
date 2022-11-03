@@ -1,0 +1,29 @@
+{
+  "gestionProduitApplication1App": {
+    "productSale": {
+      "home": {
+        "title": "Product Sales",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Product Sale",
+        "createOrEditLabel": "Create or edit a Product Sale",
+        "notFound": "No Product Sales found"
+      },
+      "created": "A new Product Sale is created with identifier {{ param }}",
+      "updated": "A Product Sale is updated with identifier {{ param }}",
+      "deleted": "A Product Sale is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Sale {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Sale"
+      },
+      "id": "Id",
+      "quantite": "Quantite",
+      "prixTotal": "Prix Total",
+      "statut": "Statut",
+      "product": "Product",
+      "stockProduct": "Stock Product",
+      "userSaleAccount": "User Sale Account"
+    }
+  }
+}

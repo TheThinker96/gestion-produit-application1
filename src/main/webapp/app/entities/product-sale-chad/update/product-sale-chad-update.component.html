@@ -1,0 +1,145 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-product-sale-chad-heading"
+        data-cy="ProductSaleCreateUpdateHeading"
+        jhiTranslate="gestionProduitApplication1App.productSale.home.createOrEditLabel"
+      >
+        Créer ou éditer un Product Sale
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="gestionProduitApplication1App.productSale.id" for="field_id">Id</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gestionProduitApplication1App.productSale.quantite" for="field_quantite">Quantite</label>
+          <input type="number" class="form-control" name="quantite" id="field_quantite" data-cy="quantite" formControlName="quantite" />
+          <div *ngIf="editForm.get('quantite')!.invalid && (editForm.get('quantite')!.dirty || editForm.get('quantite')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('quantite')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('quantite')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              Ce champ doit être un nombre.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gestionProduitApplication1App.productSale.prixTotal" for="field_prixTotal"
+            >Prix Total</label
+          >
+          <input type="number" class="form-control" name="prixTotal" id="field_prixTotal" data-cy="prixTotal" formControlName="prixTotal" />
+          <div *ngIf="editForm.get('prixTotal')!.invalid && (editForm.get('prixTotal')!.dirty || editForm.get('prixTotal')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('prixTotal')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              Ce champ est obligatoire.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('prixTotal')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              Ce champ doit être un nombre.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gestionProduitApplication1App.productSale.statut" for="field_statut">Statut</label>
+          <input type="checkbox" class="form-check" name="statut" id="field_statut" data-cy="statut" formControlName="statut" />
+          <div *ngIf="editForm.get('statut')!.invalid && (editForm.get('statut')!.dirty || editForm.get('statut')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('statut')?.errors?.required" jhiTranslate="entity.validation.required">
+              Ce champ est obligatoire.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gestionProduitApplication1App.productSale.product" for="field_product">Product</label>
+          <select
+            class="form-control"
+            id="field_product"
+            data-cy="product"
+            name="product"
+            formControlName="product"
+            [compareWith]="compareProductChad"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="productOption" *ngFor="let productOption of productsSharedCollection">{{ productOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gestionProduitApplication1App.productSale.stockProduct" for="field_stockProduct"
+            >Stock Product</label
+          >
+          <select
+            class="form-control"
+            id="field_stockProduct"
+            data-cy="stockProduct"
+            name="stockProduct"
+            formControlName="stockProduct"
+            [compareWith]="compareStockProductChad"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="stockProductOption" *ngFor="let stockProductOption of stockProductsSharedCollection">
+              {{ stockProductOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="gestionProduitApplication1App.productSale.userSaleAccount" for="field_userSaleAccount"
+            >User Sale Account</label
+          >
+          <select
+            class="form-control"
+            id="field_userSaleAccount"
+            data-cy="userSaleAccount"
+            name="userSaleAccount"
+            formControlName="userSaleAccount"
+            [compareWith]="compareUserSaleAccountChad"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="userSaleAccountOption" *ngFor="let userSaleAccountOption of userSaleAccountsSharedCollection">
+              {{ userSaleAccountOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annuler</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Sauvegarder</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

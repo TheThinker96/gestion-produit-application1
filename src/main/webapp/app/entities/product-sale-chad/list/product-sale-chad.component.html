@@ -1,0 +1,153 @@
+<div>
+  <h2 id="page-heading" data-cy="ProductSaleHeading">
+    <span jhiTranslate="gestionProduitApplication1App.productSale.home.title">ProductSales</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="gestionProduitApplication1App.productSale.home.refreshListLabel">Actualiser la liste</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-product-sale-chad"
+        [routerLink]="['/product-sale-chad/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="gestionProduitApplication1App.productSale.home.createLabel"> Créer un nouveau Product Sale </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="productSales?.length === 0">
+    <span jhiTranslate="gestionProduitApplication1App.productSale.home.notFound">Aucun Product Sale trouvé</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="productSales && productSales.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="gestionProduitApplication1App.productSale.id">Id</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="quantite">
+            <div class="d-flex">
+              <span jhiTranslate="gestionProduitApplication1App.productSale.quantite">Quantite</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prixTotal">
+            <div class="d-flex">
+              <span jhiTranslate="gestionProduitApplication1App.productSale.prixTotal">Prix Total</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="statut">
+            <div class="d-flex">
+              <span jhiTranslate="gestionProduitApplication1App.productSale.statut">Statut</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="product.id">
+            <div class="d-flex">
+              <span jhiTranslate="gestionProduitApplication1App.productSale.product">Product</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="stockProduct.id">
+            <div class="d-flex">
+              <span jhiTranslate="gestionProduitApplication1App.productSale.stockProduct">Stock Product</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="userSaleAccount.id">
+            <div class="d-flex">
+              <span jhiTranslate="gestionProduitApplication1App.productSale.userSaleAccount">User Sale Account</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let productSale of productSales; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/product-sale-chad', productSale.id, 'view']">{{ productSale.id }}</a>
+          </td>
+          <td>{{ productSale.quantite }}</td>
+          <td>{{ productSale.prixTotal }}</td>
+          <td>{{ productSale.statut }}</td>
+          <td>
+            <div *ngIf="productSale.product">
+              <a [routerLink]="['/product-chad', productSale.product.id, 'view']">{{ productSale.product.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="productSale.stockProduct">
+              <a [routerLink]="['/stock-product-chad', productSale.stockProduct.id, 'view']">{{ productSale.stockProduct.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="productSale.userSaleAccount">
+              <a [routerLink]="['/user-sale-account-chad', productSale.userSaleAccount.id, 'view']">{{ productSale.userSaleAccount.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/product-sale-chad', productSale.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Voir</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/product-sale-chad', productSale.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editer</span>
+              </button>
+
+              <button type="submit" (click)="delete(productSale)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Supprimer</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="productSales && productSales.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+{
+  "gestionProduitApplication1App": {
+    "UserSaleAccountStatut": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "GONE": "GONE"
+    }
+  }
+}
