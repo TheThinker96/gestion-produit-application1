@@ -1,0 +1,29 @@
+{
+  "gestionProduitApplication1App": {
+    "productSale": {
+      "home": {
+        "title": "Product Sales",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Product Sale",
+        "createOrEditLabel": "Crear o editar Product Sale",
+        "notFound": "Ningún Product Sales encontrado"
+      },
+      "created": "Un nuevo Product Sale ha sido creado con el identificador {{ param }}",
+      "updated": "Un Product Sale ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Product Sale ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Product Sale {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Sale"
+      },
+      "id": "Id",
+      "quantite": "Quantite",
+      "prixTotal": "Prix Total",
+      "statut": "Statut",
+      "product": "Product",
+      "stockProduct": "Stock Product",
+      "userSaleAccount": "User Sale Account"
+    }
+  }
+}

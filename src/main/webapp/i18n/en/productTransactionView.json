@@ -1,0 +1,32 @@
+{
+  "gestionProduitApplication1App": {
+    "productTransactionView": {
+      "home": {
+        "title": "Product Transaction Views",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Product Transaction View",
+        "createOrEditLabel": "Create or edit a Product Transaction View",
+        "notFound": "No Product Transaction Views found"
+      },
+      "created": "A new Product Transaction View is created with identifier {{ param }}",
+      "updated": "A Product Transaction View is updated with identifier {{ param }}",
+      "deleted": "A Product Transaction View is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Transaction View {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Transaction View"
+      },
+      "id": "Id",
+      "productName": "Product Name",
+      "stockName": "Stock Name",
+      "quantite": "Quantite",
+      "transactionType": "Transaction Type",
+      "description": "Description",
+      "createdBy": "Created By",
+      "createdDate": "Created Date",
+      "lastModifiedBy": "Last Modified By",
+      "lastModifiedDate": "Last Modified Date"
+    }
+  }
+}

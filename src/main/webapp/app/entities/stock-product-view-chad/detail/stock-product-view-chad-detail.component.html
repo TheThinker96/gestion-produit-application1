@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="stockProductView">
+      <h2 data-cy="stockProductViewDetailsHeading">
+        <span jhiTranslate="gestionProduitApplication1App.stockProductView.detail.title">Stock Product View</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.id">Id</span></dt>
+        <dd>
+          <span>{{ stockProductView.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.quantite">Quantite</span></dt>
+        <dd>
+          <span>{{ stockProductView.quantite }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.stockName">Stock Name</span></dt>
+        <dd>
+          <span>{{ stockProductView.stockName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.productName">Product Name</span></dt>
+        <dd>
+          <span>{{ stockProductView.productName }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.deliveryDate">Delivery Date</span></dt>
+        <dd>
+          <span>{{ stockProductView.deliveryDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.expirationDate">Expiration Date</span></dt>
+        <dd>
+          <span>{{ stockProductView.expirationDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.createdBy">Created By</span></dt>
+        <dd>
+          <span>{{ stockProductView.createdBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ stockProductView.createdDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.lastModifiedBy">Last Modified By</span></dt>
+        <dd>
+          <span>{{ stockProductView.lastModifiedBy }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.stockProductView.lastModifiedDate">Last Modified Date</span></dt>
+        <dd>
+          <span>{{ stockProductView.lastModifiedDate | formatMediumDatetime }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/stock-product-view-chad', stockProductView.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

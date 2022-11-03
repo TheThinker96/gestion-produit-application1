@@ -1,0 +1,31 @@
+{
+  "gestionProduitApplication1App": {
+    "stockProduct": {
+      "home": {
+        "title": "Stock Products",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Stock Product",
+        "createOrEditLabel": "Create or edit a Stock Product",
+        "notFound": "No Stock Products found"
+      },
+      "created": "A new Stock Product is created with identifier {{ param }}",
+      "updated": "A Stock Product is updated with identifier {{ param }}",
+      "deleted": "A Stock Product is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stock Product {{ id }}?"
+      },
+      "detail": {
+        "title": "Stock Product"
+      },
+      "id": "Id",
+      "quantite": "Quantite",
+      "name": "Name",
+      "deliveryDate": "Delivery Date",
+      "expirationDate": "Expiration Date",
+      "prixStock": "Prix Stock",
+      "productSale": "Product Sale",
+      "productTransaction": "Product Transaction",
+      "product": "Product"
+    }
+  }
+}

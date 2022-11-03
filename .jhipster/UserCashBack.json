@@ -1,0 +1,37 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20221103144314",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "user_cash_back",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "montant",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "UserSaleAccountStatut",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE,GONE"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserCashBack",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

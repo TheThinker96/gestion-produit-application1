@@ -1,0 +1,60 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="productSale">
+      <h2 data-cy="productSaleDetailsHeading">
+        <span jhiTranslate="gestionProduitApplication1App.productSale.detail.title">Product Sale</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSale.id">Id</span></dt>
+        <dd>
+          <span>{{ productSale.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSale.quantite">Quantite</span></dt>
+        <dd>
+          <span>{{ productSale.quantite }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSale.prixTotal">Prix Total</span></dt>
+        <dd>
+          <span>{{ productSale.prixTotal }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSale.statut">Statut</span></dt>
+        <dd>
+          <span>{{ productSale.statut }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSale.product">Product</span></dt>
+        <dd>
+          <div *ngIf="productSale.product">
+            <a [routerLink]="['/product-chad', productSale.product.id, 'view']">{{ productSale.product.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSale.stockProduct">Stock Product</span></dt>
+        <dd>
+          <div *ngIf="productSale.stockProduct">
+            <a [routerLink]="['/stock-product-chad', productSale.stockProduct.id, 'view']">{{ productSale.stockProduct.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productSale.userSaleAccount">User Sale Account</span></dt>
+        <dd>
+          <div *ngIf="productSale.userSaleAccount">
+            <a [routerLink]="['/user-sale-account-chad', productSale.userSaleAccount.id, 'view']">{{ productSale.userSaleAccount.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/product-sale-chad', productSale.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

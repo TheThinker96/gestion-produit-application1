@@ -1,0 +1,26 @@
+{
+  "gestionProduitApplication1App": {
+    "userCashBack": {
+      "home": {
+        "title": "UserCashBacks",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau User Cash Back",
+        "createOrEditLabel": "Créer ou éditer un User Cash Back",
+        "notFound": "Aucun User Cash Back trouvé"
+      },
+      "created": "Un nouveau User Cash Back a été créé avec l'identifiant {{ param }}",
+      "updated": "Le User Cash Back avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le User Cash Back avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le User Cash Back {{ id }} ?"
+      },
+      "detail": {
+        "title": "User Cash Back"
+      },
+      "id": "Id",
+      "montant": "Montant",
+      "balance": "Balance",
+      "statut": "Statut"
+    }
+  }
+}

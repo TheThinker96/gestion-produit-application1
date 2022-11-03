@@ -1,0 +1,137 @@
+entity Product {
+	id Long
+    name String required minlength(3)
+    prix BigDecimal
+}
+
+entity StockProduct{
+	id Long
+    quantite Long
+    name String required minlength(3)
+    deliveryDate Instant required
+    expirationDate Instant required
+    prixStock BigDecimal required
+    
+}
+
+
+
+entity ProductSale{
+	id Long
+    quantite Long required
+    prixTotal BigDecimal required
+    statut Boolean required
+    
+}
+
+entity ProductTransaction{
+	id Long
+    transactionType TypeTransaction required
+    description String    
+}
+
+entity StockProductView {
+	id Long
+    quantite Long
+    stockName String
+    productName String
+    deliveryDate Instant
+    expirationDate Instant
+    createdBy String
+    createdDate Instant
+    lastModifiedBy String
+    lastModifiedDate Instant
+}
+
+entity ProductSaleView {
+	id Long
+    productName String
+    stockName String 
+    quantite Long
+    productPrice BigDecimal
+    total BigDecimal
+    createdBy String
+    createdDate Instant
+    lastModifiedBy String
+    lastModifiedDate Instant
+}
+
+entity ProductTransactionView {
+	id Long
+    productName String
+    stockName String 
+    quantite Long
+    transactionType TypeTransaction
+    description String
+    createdBy String
+    createdDate Instant
+    lastModifiedBy String
+    lastModifiedDate Instant
+}
+
+enum TypeTransaction {
+	PRODUCTSALE, SALECANCELLED
+}
+entity UserSaleAccount{
+	id Long
+    statut UserSaleAccountStatut
+    balance Double
+}
+
+enum UserSaleAccountStatut{
+	ACTIVE, GONE
+}
+
+entity UserCashBack{
+	id Long
+    montant BigDecimal required
+    balance BigDecimal required
+    statut UserSaleAccountStatut required
+}
+
+
+
+
+
+
+relationship OneToMany {
+	Product to StockProduct
+}
+
+relationship OneToMany {
+	Product to ProductSale
+}
+
+relationship OneToMany {
+	StockProduct to ProductSale
+}
+
+
+relationship OneToMany {
+	StockProduct to ProductTransaction
+}
+
+relationship OneToMany {
+	Product to ProductTransaction
+}
+
+relationship OneToMany {
+	UserSaleAccount to ProductSale
+}
+
+
+// Set pagination options
+paginate all with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct except StockProductView, ProductTransactionView, ProductSaleView
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+angularSuffix * with chad
+
+
+
+    

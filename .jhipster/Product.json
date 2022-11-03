@@ -1,0 +1,50 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20221103144306",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "product",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength"],
+      "fieldValidateRulesMinlength": "3"
+    },
+    {
+      "fieldName": "prix",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Product",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "stockProduct",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "stockProduct",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "productSale",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "productSale",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "productTransaction",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "productTransaction",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

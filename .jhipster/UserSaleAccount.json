@@ -1,0 +1,37 @@
+{
+  "angularJSSuffix": "chad",
+  "applications": "*",
+  "changelogDate": "20221103144313",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "user_sale_account",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "statut",
+      "fieldType": "UserSaleAccountStatut",
+      "fieldValues": "ACTIVE,GONE"
+    },
+    {
+      "fieldName": "balance",
+      "fieldType": "Double"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserSaleAccount",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "productSale",
+      "otherEntityRelationshipName": "userSaleAccount",
+      "relationshipName": "productSale",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

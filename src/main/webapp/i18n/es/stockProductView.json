@@ -1,0 +1,32 @@
+{
+  "gestionProduitApplication1App": {
+    "stockProductView": {
+      "home": {
+        "title": "Stock Product Views",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Stock Product View",
+        "createOrEditLabel": "Crear o editar Stock Product View",
+        "notFound": "Ningún Stock Product Views encontrado"
+      },
+      "created": "Un nuevo Stock Product View ha sido creado con el identificador {{ param }}",
+      "updated": "Un Stock Product View ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Stock Product View ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Stock Product View {{ id }}?"
+      },
+      "detail": {
+        "title": "Stock Product View"
+      },
+      "id": "Id",
+      "quantite": "Quantite",
+      "stockName": "Stock Name",
+      "productName": "Product Name",
+      "deliveryDate": "Delivery Date",
+      "expirationDate": "Expiration Date",
+      "createdBy": "Created By",
+      "createdDate": "Created Date",
+      "lastModifiedBy": "Last Modified By",
+      "lastModifiedDate": "Last Modified Date"
+    }
+  }
+}

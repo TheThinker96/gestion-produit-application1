@@ -1,0 +1,26 @@
+{
+  "gestionProduitApplication1App": {
+    "userSaleAccount": {
+      "home": {
+        "title": "User Sale Accounts",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo User Sale Account",
+        "createOrEditLabel": "Crear o editar User Sale Account",
+        "notFound": "Ningún User Sale Accounts encontrado"
+      },
+      "created": "Un nuevo User Sale Account ha sido creado con el identificador {{ param }}",
+      "updated": "Un User Sale Account ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un User Sale Account ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar User Sale Account {{ id }}?"
+      },
+      "detail": {
+        "title": "User Sale Account"
+      },
+      "id": "Id",
+      "statut": "Statut",
+      "balance": "Balance",
+      "productSale": "Product Sale"
+    }
+  }
+}

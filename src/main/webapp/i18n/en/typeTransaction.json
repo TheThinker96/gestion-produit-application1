@@ -1,0 +1,9 @@
+{
+  "gestionProduitApplication1App": {
+    "TypeTransaction": {
+      "null": "",
+      "PRODUCTSALE": "PRODUCTSALE",
+      "SALECANCELLED": "SALECANCELLED"
+    }
+  }
+}

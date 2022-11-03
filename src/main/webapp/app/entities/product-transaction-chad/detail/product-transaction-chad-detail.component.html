@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="productTransaction">
+      <h2 data-cy="productTransactionDetailsHeading">
+        <span jhiTranslate="gestionProduitApplication1App.productTransaction.detail.title">Product Transaction</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransaction.id">Id</span></dt>
+        <dd>
+          <span>{{ productTransaction.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransaction.transactionType">Transaction Type</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'gestionProduitApplication1App.TypeTransaction.' + productTransaction.transactionType }}">{{
+            productTransaction.transactionType
+          }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransaction.description">Description</span></dt>
+        <dd>
+          <span>{{ productTransaction.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransaction.stockProduct">Stock Product</span></dt>
+        <dd>
+          <div *ngIf="productTransaction.stockProduct">
+            <a [routerLink]="['/stock-product-chad', productTransaction.stockProduct.id, 'view']">{{
+              productTransaction.stockProduct.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="gestionProduitApplication1App.productTransaction.product">Product</span></dt>
+        <dd>
+          <div *ngIf="productTransaction.product">
+            <a [routerLink]="['/product-chad', productTransaction.product.id, 'view']">{{ productTransaction.product.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/product-transaction-chad', productTransaction.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>
